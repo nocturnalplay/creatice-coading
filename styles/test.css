@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@900&display=swap');
+
+:root {
+    --primary--bg: #222;
+    --primary-color: #ddd;
+}
+
+body[theme="light"] {
+    --primary--bg: #ddd;
+    --primary-color: #222;
+}
+
+::selection {
+    background-color: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary--bg);
+    transition: 0.5s;
+}
+
+button {
+    font-size: 5rem;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    background: transparent;
+}
+.scale {
+    width: 100%;
+    height: 100%;
+    perspective: 600px;
+    background-color: rgb(71, 71, 71);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.cube {
+    width: 210px;
+    height: 210px;
+    position: relative;
+    border-radius: 8px;
+    transform-style: preserve-3d;
+    transition: .1s;
+}
+
+.layer {
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ddd;
+    font-weight: 900;
+    font-family: 'Titillium Web', sans-serif;
+    border-radius: 8px;
+}
+.front {
+    transform: rotateY(0deg)translateZ(100px);
+}
+
+.right {
+    transform: rotateY(90deg)translateZ(100px);
+}
+
+.back {
+    transform: rotateY(180deg)translateZ(100px);
+}
+
+.left {
+    transform: rotateY(-90deg)translateZ(100px);
+}
+
+.top {
+    transform: rotateX(90deg)translateZ(100px);
+}
+
+.bottom {
+    transform: rotateX(-90deg)translateZ(100px);
+}
